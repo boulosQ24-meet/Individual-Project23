@@ -15,23 +15,25 @@
         <a href="/logout"><button>Log Out</button></a>
     </div>
 
+    <br>
+
     <h2>Share a Quote with your cohort</h2>
-    <form method="post" action="/home" align="center">
+    <form method="post" action="/home" align="center"  class="post-form">
         <br>
         <br>
         <label>Share A Quote</label>
         <br>
         <br>
-        <input type="text" name="formUsername" minlength="5" placeholder="username">
+        <input id="post-input" type="text" name="formUsername" minlength="5" placeholder="username">
         <br>
         <br>
-        <input type = "text" name="quote" minlength="5" placeholder="qoute">
+        <input id="post-input" type = "text" name="quote" minlength="5" placeholder="qoute">
         <br>
         <br>
-        <input type = "text" name="author" minlength="1" placeholder="who said it">
+        <input id="post-input" type = "text" name="author" minlength="1" placeholder="who said it">
         <br>
         <br>
-        <input type="submit" name="subBtn">
+        <input id="postBtn" type="submit" name="subBtn">
         <br>
         <br>
     </form>
@@ -41,15 +43,18 @@
         <div>
             {% for post in postss %}
             <br>
-            <hr>
             <br>
-            <h4 id="post1">username: {{postss[post]['username']}}</h4>
+            <div class="posts-place">
+                <h5 class="title">username:</h5>
+                <h4 id="post1">{{postss[post]['username']}}</h4>
+                <br>
+                <h5 class="title">qoute:</h5>
+                <h3 id="post1">{{postss[post]['qoute']}}</h3>
+                <br>
+                <h5 class="title">author:</h5>
+                <h3 id="post1">author: {{postss[post]['author']}}</h3>
+            </div>
             <br>
-            <h2 id="post1">qoute: {{postss[post]['qoute']}}</h2>
-            <br>
-            <h3 id="post1">author: {{postss[post]['author']}}</h3>
-            <br>
-            <hr>
             <br>
             {% endfor %}
         </dev>
